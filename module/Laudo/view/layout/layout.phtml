@@ -1,7 +1,7 @@
 <html lang="pt-BR">
     <head>
         <meta charset="utf-8">
- 
+
         <!-- Title Head -->
         <?php
         $NAME_APPLICATION = 'Lista de Laudos';
@@ -11,7 +11,7 @@
                 ->setAutoEscape(false)
         ;
         ?>
- 
+
         <!-- Meta Head -->
         <?php
         echo $this
@@ -20,7 +20,7 @@
                 ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
         ;
         ?>
- 
+
         <!-- Styles -->
         <?php
         echo $this
@@ -33,34 +33,46 @@
     </head>
     <body>
         <div class="container">
+
             <div class="header">
                 <ul class="nav nav-pills pull-right">
-                    <li class="active"><a href="#">Início</a></li>
-                    <li><a href="#">Sobre</a></li>
+                    <?php
+                    $url_home = $this->url('home');
+                    $url_sobre = $this->url('sobre');
+                    ?>
+                    <li <?php echo $this->menuAtivo($url_home); ?>>
+                        <a href="<?php echo $url_home; ?>">Início</a>
+                    </li>
+                    <li <?php echo $this->menuAtivo($url_sobre); ?>>
+                        <a href="<?php echo $url_sobre; ?>">Sobre</a>
+                    </li>
                 </ul>
                 <h3 class="text-muted"><?php echo $NAME_APPLICATION; ?></h3>
             </div>
- 
+
+            <?php echo $this->message(); ?>
+
             <div class="row marketing">
                 <?php echo $this->content; ?>
             </div>
- 
+
             <div class="footer">
                 <p class="muted credit pull-left">Rib@ck <a href="">© 2014</a></p>
                 <p class="muted credit pull-right">Desenvolvido por <a href="http://rib@ck.com">Guilherme R.</a>.</p>
             </div>
         </div>
- 
+
         <!-- Scripts -->
         <?php
         echo $this
                 ->headScript()
-                ->prependFile($this->basePath() . '/js/bootstrap.min.js')
-                ->prependFile($this->basePath() . '/js/jquery.min.js')
                 ->prependFile($this->basePath() . '/js/respond.min.js', 'text/javascript', array('conditional' => 'lt IE 9',))
                 ->prependFile($this->basePath() . '/js/html5shiv.js', 'text/javascript', array('conditional' => 'lt IE 9',))
+                ->prependFile($this->basePath() . '/js/scripts.js')
+                ->prependFile($this->basePath() . '/js/bootstrap.min.js')
+                ->prependFile($this->basePath() . '/js/jquery.min.js')
         ;
- 
+
         echo $this->inlineScript();
         ?>
     </body>

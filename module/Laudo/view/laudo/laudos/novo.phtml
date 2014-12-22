@@ -1,0 +1,35 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <div class="panel-title">
+            Novo Laudo           
+        </div>
+    </div>
+    <form class="form-horizontal" role="form" method="POST" action="<?php echo $this->url('laudos', array('action' => 'adicionar')); ?>">
+        <div class="panel-body">
+            <div class="form-group">
+                <label for="inputCI" class="col-lg-3 col-md-3 control-label">CI:</label>
+                <div class="col-lg-9 col-md-9">
+                    <input type="text" name="ci" class="form-control" id="inputCI" placeholder="CI">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="inputProc" class="col-lg-3 col-md-3 control-label">Procedimento:</label>
+                <div class="col-lg-9  col-md-9">
+                    <input type="text" name="procedimento" class="form-control" id="inputProc" placeholder="Digite o nr. do procedimento">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="inputOC" class="col-lg-3 col-md-3 control-label">OC:</label>
+                <div class="col-lg-9  col-md-9">
+                    <input type="text" name="oc" class="form-control" id="inputOC" placeholder="Digite o nr. da OC">
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <button type="submit" class="btn btn-primary">Salvar Laudo</button>
+            <a href="<?php echo $this->url('laudos'); ?>" class="btn btn-default">Voltar</a>
+        </div>
+    </form>
+</div>

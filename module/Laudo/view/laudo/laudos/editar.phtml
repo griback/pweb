@@ -1,0 +1,36 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <div class="panel-title">
+            Detalhe do Laudo # <?php echo $this->id; ?>       
+        </div>
+    </div>
+    <form class="form-horizontal" role="form" method="POST" action="<?php echo $this->url('laudos', array('action' => 'atualizar')); ?>">
+        <div class="panel-body">
+            <div class="form-group">
+                <label for="inputCI" class="col-lg-3 col-md-3 control-label">CI:</label>
+                <div class="col-lg-9 col-md-9">
+                    <input type="text" name="ci" class="form-control" id="inputCI" placeholder="CI" value="<?php echo $this->form['ic']; ?>">
+                </div>
+            </div>
+ 
+            <div class="form-group">
+                <label for="inputProcedimento" class="col-lg-3 col-md-3 control-label">Procedimento:</label>
+                <div class="col-lg-9  col-md-9">
+                    <input type="text" name="procedimento" class="form-control" id="inputProcedimento" placeholder="Digite o procedimento" value="<?php echo $this->form['procedimento']; ?>">
+                </div>
+            </div>
+ 
+            <div class="form-group">
+                <label for="inputOC" class="col-lg-3 col-md-3 control-label">OC:</label>
+                <div class="col-lg-9  col-md-9">
+                    <input type="text" name="oc" class="form-control" id="inputOC" placeholder="Digite a OC" value="<?php echo $this->form['oc']; ?>">
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <input type="hidden" name="id" value="<?php echo $this->id; ?>">
+            <button type="submit" class="btn btn-primary">Atualizar Laudo</button>
+            <a href="<?php echo $this->url('laudos'); ?>" class="btn btn-default">Voltar</a>
+        </div>
+    </form>
+</div>

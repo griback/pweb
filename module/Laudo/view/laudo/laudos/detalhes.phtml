@@ -1,0 +1,21 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <div class="panel-title">
+            Detalhe do Laudo # <?php echo $this->id; ?>            
+        </div>
+    </div>
+    <div class="panel-body">
+        <dl class="dl-horizontal">
+            <dt>CI:</dt>
+            <dd><?php echo $this->form["ci"]; ?></dd>
+            <dt>Procedimento:</dt>
+            <dd><?php echo $this->form["procedimento"]; ?></dd>
+            <dt>OC:</dt>
+            <dd><?php echo $this->form["oc"]; ?></dd>
+        </dl>
+    </div>
+    <div class="panel-footer">
+        <a href="<?php echo $this->url('laudos', array('action' => 'editar', 'id' => $this->id)); ?>" class="btn btn-warning btn-sm">Editar Laudo</a>
+        <a href="<?php echo $this->url('laudos'); ?>" class="btn btn-default btn-sm">Voltar</a>
+    </div>
+</div>
